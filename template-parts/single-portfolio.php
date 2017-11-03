@@ -9,13 +9,14 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header>
-	<div class="entry-content">
+<article id="post-<?php the_ID(); ?>" <?php post_class('grid-x'); ?>>
+	<?php get_home_portfolio(); ?>
+	<div class="column small-12 medium-3 entry-content">
 		<?php the_content(); ?>
 		<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+	</div>
+	<div class="column small-12 medium-9 text-center">
+		<?php the_post_thumbnail(); ?>
 	</div>
 	<footer>
 		<?php

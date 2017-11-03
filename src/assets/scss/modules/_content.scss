@@ -1,10 +1,10 @@
 .main-wrap {
   @include xy-grid-container;
   @include xy-grid();
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   @include breakpoint(medium) {
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
 
   &.sidebar-left {

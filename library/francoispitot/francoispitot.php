@@ -1,0 +1,42 @@
+<?php
+
+include_once 'cpt.php';
+
+// Add Stickies on Portfolio
+// Use ACF and add ACF lite conf here
+
+// Get first sticky portfolio for front page content
+// Must reset post data after output
+function get_home_portfolio() {
+  global $post;
+
+  $posts = get_posts(array(
+    'numberposts' => 1,
+    'post_type'   => 'portfolio',
+    'meta_query'  => array(
+      array(
+        'key'   => 'portfolio_sticky',
+        'value' => true,
+      ),
+    ),
+  ));
+  $post = reset($posts);
+  setup_postdata($post);
+}
+
+// output portfolio projets navigation menu
+function portfolio_navigation() {
+  
+  $term_id = 0;
+  if (is_tax('projects')) {
+    $term = get_queried_object();
+    $term_id = $term->term_id;
+  }
+  $args = array(
+    'current_category'  => $term_id,
+    'taxonomy'          => 'projects',
+    'title_li'          => __( '' ),
+  );
+
+  wp_list_categories( $args );
+}

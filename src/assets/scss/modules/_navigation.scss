@@ -1,3 +1,8 @@
+// All menus
+.menu {
+  font-family: $header-font-family;
+}
+
 // Navigation breakpoints
 .mobile-menu,
 .site-title-bar {
@@ -38,7 +43,7 @@
 .title-bar-title {
   a {
     font-size: 1rem;
-    color: #B9B9B9;
+    color: $black;
   }
 }
 
@@ -46,7 +51,7 @@
 .mobile-off-canvas-menu {
 
   .menu .is-active > a {
-    background-color: lighten($dark-nav-color, 5%);
+    //background-color: lighten($black, 5%);
   }
 }
 
@@ -56,28 +61,29 @@
 
   .top-bar-title a {
     font-size: 1rem;
-    color: #B9B9B9;
+    color: $black;
     padding-left: 1rem;
     line-height: 1.8;
   }
 
   .menu a {
-    color: #e6e6e6;
+    color: $black;
     padding-top: 0;
     padding-bottom: 0;
-    font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     line-height: 1;
 
     &:hover:not(.button) {
-      background-color: #42525D;
+      //background-color: $medium-gray;
+      color: $medium-gray;
     }
   }
 
-  .menu .active > a { background-color: #ccc; }
+  .menu .active > a { background-color: $medium-gray; }
 
-  .menu>li:not(.menu-text)>a { padding: 1rem; }
-  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+  .menu>li:not(.menu-text)>a { padding: .5rem .25rem; }
+  .menu li:not(:last-child) { /*border-right: 1px solid #4e4e4e;*/ }
+  .menu li:last-child { padding-right: 1rem; }
 
   .dropdown.menu .submenu { border: 0; }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
@@ -88,6 +94,21 @@
 .site-navigation {
   @include breakpoint(small only) {
     padding: 0; // prevents container visibility on small screens
+  }
+}
+
+// Projects tax navigation
+.menu.projects {
+  font-size: 70%;
+  margin-top: 1.25rem;
+  .current-cat {
+    background-color: $light-gray;
+  }
+  a {
+    padding: .25rem;
+    &:hover:not(.button) {
+      color: $medium-gray;
+    }
   }
 }
 
