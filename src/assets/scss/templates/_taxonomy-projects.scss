@@ -14,12 +14,6 @@ body.tax-projects {
   .orbit-slide {
     text-align: center;
   }
-  .orbit-slide.is-active + .orbit-slide {
-    display: block !important;
-    .orbit-image {
-      margin-left: -90%;
-    }
-  }
   .orbit-image {
     max-height: 500px;
     width: auto;
@@ -31,15 +25,14 @@ body.tax-projects {
     color: $medium-gray;
   }
   .gallery-caption {
-    width: 50%;
     position: absolute;
     white-space: normal;
     bottom: auto;
     top: 0;
     left: 0;
-    width: 25%;
+    width: 30%;
     margin-bottom: 0;
-    padding: 0 2rem;
+    padding: 0 5%;
     p {
       @extend .orbit-caption;
       padding: 0 1rem;
@@ -51,7 +44,6 @@ body.tax-projects {
       font-family: FontAwesome;
     }
   }
-
   .orbit-previous:hover,
   .orbit-next:hover,
   .orbit-previous:active,
