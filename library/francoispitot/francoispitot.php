@@ -1,6 +1,12 @@
 <?php
 
 include_once 'cpt.php';
+include_once 'customizer.php';
+
+function francoispitot_scripts() {
+  wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/0d1f12f0e3.js');
+}
+add_action('wp_head', 'francoispitot_scripts');
 
 // Add Stickies on Portfolio
 // Use ACF and add ACF lite conf here
@@ -26,7 +32,7 @@ function get_home_portfolio() {
 
 // output portfolio projets navigation menu
 function portfolio_navigation() {
-  
+
   $term_id = 0;
   if (is_tax('projects')) {
     $term = get_queried_object();

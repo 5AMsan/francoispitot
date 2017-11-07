@@ -1,0 +1,63 @@
+body.tax-projects {
+
+  .main-container {
+    margin-top: 5rem;
+    max-width: none;
+  }
+  .orbit-wrapper {
+    position: relative;
+  }
+  .orbit-container {
+    width: 100%;
+    height: 500px;
+  }
+  .orbit-slide {
+    text-align: center;
+  }
+  .orbit-slide.is-active + .orbit-slide {
+    display: block !important;
+    .orbit-image {
+      margin-left: -90%;
+    }
+  }
+  .orbit-image {
+    max-height: 500px;
+    width: auto;
+  }
+  .orbit-caption {
+    font-size: 12px;
+    text-align: left;
+    background-color: transparent;
+    color: $medium-gray;
+  }
+  .gallery-caption {
+    width: 50%;
+    position: absolute;
+    white-space: normal;
+    bottom: auto;
+    top: 0;
+    left: 0;
+    width: 25%;
+    margin-bottom: 0;
+    padding: 0 2rem;
+    p {
+      @extend .orbit-caption;
+      padding: 0 1rem;
+      position: static;
+    }
+  }
+  .orbit-controls {
+    button {
+      font-family: FontAwesome;
+    }
+  }
+
+  .orbit-previous:hover,
+  .orbit-next:hover,
+  .orbit-previous:active,
+  .orbit-next:active,
+  .orbit-previous:focus,
+  .orbit-next:focus {
+    background-color: rgba($medium-gray, 0.5);
+  }
+}
