@@ -28,7 +28,7 @@ $is_active = "is-active";
 ?>
 
 
-<div class="main-container grid-container fluid full">
+<div class="main-wrap grid-container fluid full">
 	<main class="main-content">
 	<?php if ( have_posts() ) : ?>
 

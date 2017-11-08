@@ -11,13 +11,15 @@ import $ from 'jquery';
 //   }
 // });
 
-var nextImage, prevImage, nextClone, prevClone;
-positionNextImage();
-
-$('.orbit').on('slidechange.zf.orbit', function(e) {
-  positionPrevImage();
+if ( $('.orbit-slide').length > 1 ) {
+  var nextImage, prevImage, nextClone, prevClone;
   positionNextImage();
-});
+  
+  $('.orbit').on('slidechange.zf.orbit', function(e) {
+    positionPrevImage();
+    positionNextImage();
+  });
+}
 
 function positionNextImage() {
   if (nextClone) nextClone.fadeOut('fast', function(){$(this).remove();});

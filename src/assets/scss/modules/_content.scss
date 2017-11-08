@@ -3,8 +3,18 @@
   @include xy-grid();
   margin-top: 2rem;
 
-  @include breakpoint(medium) {
-    margin-top: 5rem;
+  @at-root {
+    & {
+      @include breakpoint(medium) {
+        margin-top: 5rem;
+      }
+    }
+    header.featured-hero  {
+      margin-top: 5rem;
+    }
+    header.featured-hero + & {
+      margin-top: 2rem;
+    }
   }
 
   &.sidebar-left {
@@ -30,7 +40,6 @@
   }
 
   .main-content {
-
     // Default template
     @include breakpoint(small) {
       @include xy-cell(12);
@@ -53,5 +62,16 @@
       margin-top: 1rem;
     }
 
+  }
+
+  // Custom
+  .main-content {
+    font-size: .8rem;
+    h2 {
+      margin-top: 2.5rem;
+    }
+    time {
+      font-size: .8rem;
+    }
   }
 }

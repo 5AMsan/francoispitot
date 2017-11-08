@@ -1,8 +1,10 @@
 body.tax-projects {
 
-  .main-container {
-    margin-top: 5rem;
+  .main-wrap {
     max-width: none;
+  }
+  .main-content {
+    width: 100%;
   }
   .orbit-wrapper {
     position: relative;
@@ -32,7 +34,7 @@ body.tax-projects {
     left: 0;
     width: 30%;
     margin-bottom: 0;
-    padding: 0 5%;
+    padding: 0 2rem;
     p {
       @extend .orbit-caption;
       padding: 0 1rem;
