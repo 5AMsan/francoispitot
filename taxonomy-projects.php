@@ -21,6 +21,7 @@ global $is_active;
 $orbit_config = array('data-orbit');
 $orbit_config[] = 'data-auto-play="false"';
 $orbit_config[] = get_theme_mod('portfolio_use_bullets') ? 'data-bullets="true"' : 'data-bullets="false"';
+$orbit_config[] = 'data-options="animation_speed:0;"';
 
 $orbit_data = implode(' ', $orbit_config);
 $bullets = array();
