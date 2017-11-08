@@ -15,33 +15,60 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+get_header();
 
-<div class="main-wrap">
+global $is_active;
+$orbit_config = array('data-orbit');
+$orbit_config[] = 'data-auto-play="false"';
+$orbit_config[] = get_theme_mod('portfolio_use_bullets') ? 'data-bullets="true"' : 'data-bullets="false"';
+
+$orbit_data = implode(' ', $orbit_config);
+$bullets = array();
+$is_active = "is-active";
+?>
+
+
+<div class="main-container grid-container fluid full">
 	<main class="main-content">
 	<?php if ( have_posts() ) : ?>
 
-		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-		<?php endwhile; ?>
+		<div class="orbit" role="region" aria-label="<?php single_term_title(); ?>" <?php echo $orbit_data; ?>>
+		  <div class="orbit-wrapper">
 
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+				<div class="gallery-caption">
+					<?php echo term_description(); ?>
+				</div>
 
-		<?php endif; // End have_posts() check. ?>
+		    <div class="orbit-controls">
+		      <button class="orbit-previous"><span class="show-for-sr"><?php _e('Précédent', 'foundationpress'); ?></span><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></button>
+		      <button class="orbit-next"><span class="show-for-sr"><?php _e('Suivant', 'foundationpress'); ?></span><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></button>
+		    </div>
 
-		<?php /* Display navigation to next/previous pages when applicable */ ?>
-		<?php
-		if ( function_exists( 'foundationpress_pagination' ) ) :
-			foundationpress_pagination();
-		elseif ( is_paged() ) :
-		?>
-			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+		    <ul class="orbit-container">
+					<?php
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
+						get_template_part( 'template-parts/single', 'portfolio' );
+						$bullets[] = "<button class=\"$is_active\" data-slide=\"$i\"><span class=\"show-for-sr\">First slide details.</span></button>";
+						$is_active = null;
+					endwhile; ?>
+				</ul>
+
+			</div>
+
+			<?php if (get_theme_mod('portfolio_use_bullets')) : ?>
+			<nav class="orbit-bullets">
+				<?php echo implode("\r", $bullets); ?>
 			</nav>
 		<?php endif; ?>
+		</div>
+
+	<?php else : ?>
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
+
+	<?php endif; // End have_posts() check. ?>
+
 
 	</main>
 
