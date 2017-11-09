@@ -35,7 +35,8 @@
   // Full width template
   &.full-width {
     .main-content {
-      @include xy-cell(12);
+      @include xy-cell(6);
+      @include xy-cell-offset(3);
     }
   }
 
@@ -62,6 +63,50 @@
       margin-top: 1rem;
     }
 
+  }
+
+  // Comments template
+  #respond {
+    margin-top: 2.5rem;
+
+    input[type="submit"] {
+      margin-top: 1rem;
+    }
+
+    #allowed_tags {
+      display: none;
+    }
+  }
+
+  // Form
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+    font-size: .8rem;
+    height: 2rem;
+  }
+  .wpcf7-submit {
+    @include button(false, $black, auto, auto, hollow);
+    //@include button-hollow;
+  }
+  // Validation
+  div.wpcf7-validation-errors {
+    border-color: get-color(success);
+  }
+  div.wpcf7-mail-sent-ok {
+  	border-color: get-color(warning);
+  }
+  div.wpcf7-mail-sent-ng {
+  	border-color: get-color(alert);
+  }
+  div.wpcf7-spam-blocked {
+  	border-color: get-color(alert);
+  }
+  span.wpcf7-not-valid-tip {
+    color: get-color(warning);
+    position: relative;
+    top: -1rem;
+  }
+  input[aria-invalid="true"] {
+    border-bottom: 2px solid get-color(warning);
   }
 
   // Custom

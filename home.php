@@ -16,9 +16,7 @@
 get_header(); ?>
 
 <div class="main-wrap full-width">
-	<main class="main-content grid-x grid-margin-x">
-		<div class="hide-for-small-only medium-1 cell'"></div>
-		<div class="small-12 medium-10 cell'">
+	<main class="main-content">
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -42,7 +40,6 @@ get_header(); ?>
 					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
 				</nav>
 			<?php endif; ?>
-		</div>
 	</main>
 </div>
 
