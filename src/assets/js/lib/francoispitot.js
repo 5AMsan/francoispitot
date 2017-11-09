@@ -14,7 +14,7 @@ import $ from 'jquery';
 if ( $('.orbit-slide').length > 1 ) {
   var nextImage, prevImage, nextClone, prevClone;
   positionNextImage();
-  
+
   $('.orbit').on('slidechange.zf.orbit', function(e) {
     positionPrevImage();
     positionNextImage();
@@ -39,11 +39,11 @@ function positionNextImage() {
 
 function positionPrevImage() {
   if (prevClone) prevClone.fadeOut('fast', function(){$(this).remove();});
-  
+
   prevImage = $('.orbit-slide.is-active').prev('.orbit-slide').length > 0 ?
               $('.orbit-slide.is-active').prev('.orbit-slide').find('img.orbit-image') :
               $('.orbit-container .orbit-slide:last-of-type img.orbit-image');
-  
+
   prevClone = prevImage.clone();
   prevClone.prependTo('.orbit-container').hide().css({
     'position': 'absolute',
@@ -51,6 +51,9 @@ function positionPrevImage() {
     'left': '0px',
     'transform': 'translateX(-80%)'
   }).fadeIn('slow');
+
+  // hide description
+  $('.gallery-caption').fadeOut('slow', function(){$(this).remove();});
 }
 
 //function getNextImage() {
