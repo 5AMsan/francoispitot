@@ -31,12 +31,16 @@ $is_active = "is-active";
 
 <div class="main-wrap grid-container fluid full">
 	<main class="main-content">
+
+		<div class="gallery-caption show-for-small-only">
+			<?php echo term_description(); ?>
+		</div>
 	<?php if ( have_posts() ) : ?>
 
 		<div class="orbit" role="region" aria-label="<?php single_term_title(); ?>" <?php echo $orbit_data; ?>>
 		  <div class="orbit-wrapper">
 
-				<div class="gallery-caption">
+				<div class="gallery-caption show-for-medium">
 					<?php echo term_description(); ?>
 				</div>
 

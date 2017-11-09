@@ -20,13 +20,17 @@ body.tax-projects {
     max-height: 500px;
     width: auto;
   }
+
   .orbit-caption {
     font-size: 12px;
     text-align: left;
     background-color: transparent;
     color: $medium-gray;
   }
-  .gallery-caption {
+  .gallery-caption.show-for-small-only {
+    margin-bottom: 2rem;
+  }
+  .gallery-caption.show-for-medium {
     position: absolute;
     white-space: normal;
     bottom: auto;
