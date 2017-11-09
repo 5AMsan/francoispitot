@@ -34,7 +34,9 @@ function positionNextImage() {
     'top': '0px',
     'right': '0px',
     'transform': 'translateX(80%)'
-  }).fadeIn('slow');
+  })
+  .addClass('show-for-medium')
+  .fadeIn('slow');
 }
 
 function positionPrevImage() {
@@ -50,7 +52,9 @@ function positionPrevImage() {
     'top': '0px',
     'left': '0px',
     'transform': 'translateX(-80%)'
-  }).fadeIn('slow');
+  })
+  .addClass('show-for-medium')
+  .fadeIn('slow');
 
   // hide description
   $('.gallery-caption').fadeOut('slow', function(){$(this).remove();});
