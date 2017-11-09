@@ -62,3 +62,19 @@ function google_analytics_script() {
   <?php
 }
 add_action('wp_head', 'google_analytics_script');
+
+
+function add_custom_col_header($defaults) {
+  $defaults['portfolio_thumbnail'] = 'Photo';
+  return $defaults;
+}
+add_filter('manage_posts_columns', 'add_custom_col_header');
+
+function add_custom_col($col, $post_id) {
+  if ( $col == 'portfolio_thumbnail' ) {
+    if ( $thumb = get_the_post_thumbnail($post_id, 'thumbnail') ) {
+      echo $thumb;
+    }
+  }
+}
+add_action('manage_posts_custom_column', 'add_custom_col', 10, 2);
