@@ -57,7 +57,7 @@ function positionPrevImage() {
   .fadeIn('slow');
 
   // hide description
-  $('.gallery-caption').fadeOut('slow', function(){$(this).remove();});
+  $('.gallery-caption:not(.show-for-small-only)').fadeOut('slow', function(){$(this).remove();});
 }
 
 //function getNextImage() {

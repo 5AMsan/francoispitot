@@ -22,6 +22,22 @@
 // Mobile menu
 .mobile-menu {
   display: none; // prevents repaint caused by JS hiding menu onload
+  padding-bottom: 1rem;
+  .menu > li > a {
+    padding-left: .75rem !important;
+  }
+}
+.title-bar {
+  background-color: transparent;
+  .menu-icon {
+    color: $medium-gray;
+    &:after {
+      background-color: $medium-gray;
+    }
+  }
+  .site-mobile-title {
+    display: none;
+  }
 }
 
 .off-canvas {
@@ -51,7 +67,7 @@
 .mobile-off-canvas-menu {
 
   .menu .is-active > a {
-    //background-color: lighten($black, 5%);
+    background-color: $light-gray;
   }
 }
 
@@ -78,14 +94,19 @@
       color: $medium-gray;
     }
   }
-
+  .menu > li { padding-top: .25rem; }
   .menu .active > a { background-color: $medium-gray; }
 
-  .menu>li:not(.menu-text)>a { padding: .5rem .25rem; }
+  .menu>li:not(.menu-text)>a { padding: .25rem; }
   .menu li:not(:last-child) { /*border-right: 1px solid #4e4e4e;*/ }
   .menu li:last-child { padding-right: 1rem; }
 
   .dropdown.menu .submenu { border: 0; }
+  .dropdown.menu .is-active a {
+    background-color: $light-gray;
+    color: $dark-gray;
+  }
+
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
   .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
   .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }

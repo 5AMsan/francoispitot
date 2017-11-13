@@ -35,12 +35,15 @@
   // Full width template
   &.full-width {
     .main-content {
-      @include xy-cell(6);
-      @include xy-cell-offset(3);
+      @include breakpoint(medium) {
+        @include xy-cell(6);
+        @include xy-cell-offset(3);
+      }
     }
   }
 
   .main-content {
+    h1 { display: none; }
     // Default template
     @include breakpoint(small) {
       @include xy-cell(12);
@@ -50,6 +53,13 @@
       @include xy-cell(8);
     }
 
+    h3, h4, h5, h6 {
+      color: $body-font-color;
+      font-family: $body-font-family;
+      font-weight: 600;
+      margin-bottom: .15rem;
+      margin-top: .45rem;
+    }
   }
 
   .sidebar {
@@ -116,7 +126,7 @@
       margin-top: 2.5rem;
     }
     time {
-      font-size: .8rem;
+      font-size: .6rem;
     }
   }
 }
