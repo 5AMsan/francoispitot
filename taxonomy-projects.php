@@ -21,7 +21,7 @@ global $is_active;
 $orbit_config = array('data-orbit');
 $orbit_config[] = 'data-auto-play="false"';
 $orbit_config[] = get_theme_mod('portfolio_use_bullets') ? 'data-bullets="true"' : 'data-bullets="false"';
-$orbit_config[] = 'data-options="animation_speed:0;"';
+//$orbit_config[] = 'data-options="animation_speed:0;animInFromLeft:slide-in-left; animInFromRight:slide-in-right; animOutToLeft:slide-out-left; animOutToRight:slide-out-left;"';
 
 $orbit_data = implode(' ', $orbit_config);
 $bullets = array();
@@ -37,7 +37,7 @@ $is_active = "is-active";
 		</div>
 	<?php if ( have_posts() ) : ?>
 
-		<div class="orbit" role="region" aria-label="<?php single_term_title(); ?>" <?php echo $orbit_data; ?>>
+		<div class="orbit" role="region" aria-label="<?php single_term_title(); ?>" <?php echo $orbit_data; ?> autofocus>
 		  <div class="orbit-wrapper">
 
 				<div class="gallery-caption show-for-medium">

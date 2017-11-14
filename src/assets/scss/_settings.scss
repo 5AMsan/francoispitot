@@ -72,7 +72,7 @@ $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #1779ba,
-  secondary: #767676,
+  secondary: #666056,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -168,9 +168,9 @@ $code-font-weight: $global-weight-normal;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: $black;
+$anchor-color: get-color(secondary);
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
-$anchor-text-decoration: none;
+$anchor-text-decoration: underline;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
 $hr-border: 1px solid $medium-gray;

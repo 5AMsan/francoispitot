@@ -1,3 +1,10 @@
+h1, h2 {
+  & > a {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
 .main-wrap {
   @include xy-grid-container;
   @include xy-grid();
@@ -89,6 +96,9 @@
   }
 
   // Form
+  .wpcf7 {
+    margin-top: 1rem;
+  }
   [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
     font-size: .8rem;
     height: 2rem;
