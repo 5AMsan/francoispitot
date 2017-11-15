@@ -115,25 +115,22 @@ h1, h2 {
     //@include button-hollow;
   }
   // Validation
-  div.wpcf7-validation-errors {
-    border: none;
+  div.wpcf7-response-output {
+    text-align: center;
     color: $white;
     background-color: get-color(primary);
+  }
+  div.wpcf7-validation-errors {
+    border: none;
   }
   div.wpcf7-mail-sent-ok {
   	border: none;
-    color: $white;
-    background-color: get-color(primary);
   }
   div.wpcf7-mail-sent-ng {
   	border: none;
-    color: $white;
-    background-color: get-color(primary);
   }
   div.wpcf7-spam-blocked {
   	border: none;
-    color: $white;
-    background-color: get-color(primary);
   }
   span.wpcf7-not-valid-tip {
     color: get-color(primary);
