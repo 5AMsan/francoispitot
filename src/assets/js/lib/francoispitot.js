@@ -31,7 +31,7 @@ function positionNextImage() {
   nextImage = $('.orbit-slide.is-active').next('.orbit-slide').length > 0 ?
               $('.orbit-slide.is-active').next('.orbit-slide').find('img.orbit-image') :
               $('.orbit-container .orbit-slide:first-of-type img.orbit-image');
-  
+
   nextClone = nextImage.clone();
   nextClone.appendTo('.orbit-container').hide().css({
     'position': 'absolute',
@@ -39,7 +39,7 @@ function positionNextImage() {
     'right': '0px',
     'transform': 'translateX(80%)'
   })
-  .addClass('show-for-medium')
+  .addClass('show-for-large')
   .delay(duration * delay)
   .fadeIn(duration);
 }
@@ -60,12 +60,12 @@ function positionPrevImage() {
     'left': '0px',
     'transform': 'translateX(-80%)'
   })
-  .addClass('show-for-medium')
+  .addClass('show-for-large')
   .delay(duration * delay)
   .fadeIn(duration);
 
   // hide description
-  $('.gallery-caption:not(.show-for-small-only)')
+  $('.gallery-caption:not(.hide-for-large)')
   .delay(duration * delay)
   .fadeOut(duration, function(){$(this).remove();});
 }
