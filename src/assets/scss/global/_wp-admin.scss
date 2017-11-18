@@ -21,3 +21,13 @@ body.admin-bar {
     }
   }
 }
+
+// admin
+body.wp-admin.post-type-portfolio {
+  // Hide post parent selector
+  .postbox-container #pageparentdiv.postbox .inside {
+    & > p:first-of-type, & > select:first-of-type {
+      display: none;
+    }
+  }
+}
