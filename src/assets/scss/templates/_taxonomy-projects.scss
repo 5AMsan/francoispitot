@@ -21,6 +21,7 @@ body.tax-projects {
   .orbit-image {
     max-height: 500px;
     width: auto;
+    max-width: 60%;
     // @include breakpoint(medium only) {
     //   @include breakpoint(landscape) {
     //     max-width: 60%;
