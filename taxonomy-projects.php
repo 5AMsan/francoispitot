@@ -32,7 +32,7 @@ $is_active = "is-active";
 <div class="main-wrap grid-container fluid full">
 	<main class="main-content">
 
-		<div class="gallery-caption show-for-small-only">
+		<div class="gallery-caption hide-for-large">
 			<?php echo term_description(); ?>
 		</div>
 	<?php if ( have_posts() ) : ?>
@@ -40,7 +40,7 @@ $is_active = "is-active";
 		<div class="orbit" role="region" aria-label="<?php single_term_title(); ?>" <?php echo $orbit_data; ?> autofocus>
 		  <div class="orbit-wrapper">
 
-				<div class="gallery-caption show-for-medium">
+				<div class="gallery-caption show-for-large">
 					<?php echo term_description(); ?>
 				</div>
 

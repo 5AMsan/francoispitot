@@ -21,14 +21,14 @@ body.tax-projects {
   .orbit-image {
     max-height: 500px;
     width: auto;
-    @include breakpoint(medium only) {
-      @include breakpoint(landscape) {
-        max-width: 60%;
-      }
-      @include breakpoint(portrait) {
-        max-width: 45%;
-      }
-    }
+    // @include breakpoint(medium only) {
+    //   @include breakpoint(landscape) {
+    //     max-width: 60%;
+    //   }
+    //   @include breakpoint(portrait) {
+    //     max-width: 45%;
+    //   }
+    // }
   }
 
   .orbit-caption {
@@ -37,10 +37,12 @@ body.tax-projects {
     background-color: transparent;
     color: $medium-gray;
   }
-  .gallery-caption.show-for-small-only {
+  //.gallery-caption.show-for-small-only {
+  .gallery-caption.hide-for-large {
     margin-bottom: 2rem;
   }
-  .gallery-caption.show-for-medium {
+  //.gallery-caption.show-for-medium {
+  .gallery-caption.show-for-large {
     position: absolute;
     white-space: normal;
     bottom: auto;
