@@ -78,3 +78,10 @@ function add_custom_col($col, $post_id) {
   }
 }
 add_action('manage_posts_custom_column', 'add_custom_col', 10, 2);
+
+function portfolio_order($query) {
+  if (! is_admin() && $query->is_main_query() && is_tax('projects')) {
+    $query->set('orderby', 'menu_order');
+  }
+}
+add_action('pre_get_posts', 'portfolio_order');
