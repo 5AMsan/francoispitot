@@ -32,7 +32,8 @@
   .menu-icon {
     color: $medium-gray;
     &:after {
-      background-color: $medium-gray;
+      background: $medium-gray;
+      box-shadow: 0 7px 0 $medium-gray, 0 14px 0 $medium-gray;
     }
   }
   .site-mobile-title {
